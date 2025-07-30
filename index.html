@@ -697,14 +697,20 @@
   </div>
 
   <script>
-    function playAudio(text) {
-      const cleanText = encodeURIComponent(text.trim());
-      const audio = new Audio(`https://translate.google.com/translate_tts?ie=UTF-8&tl=de&q=${cleanText}&client=tw-ob`);
-      audio.play().catch(e => {
-        console.warn("Error de audio:", e.message);
-      });
-    }
-  </script>
+  async function playAudio(text) {
+    const utterance = new SpeechSynthesisUtterance();
+    utterance.text = text;
+    utterance.lang = 'de-DE'; // Alemán
+    utterance.rate = 0.9; // Velocidad normal
+    utterance.pitch = 1;  // Tono natural
+
+    // Cancela cualquier audio en curso
+    window.speechSynthesis.cancel();
+    
+    // Reproduce
+    window.speechSynthesis.speak(utterance);
+  }
+</script>
 
 </body>
 </html>
