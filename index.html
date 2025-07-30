@@ -127,7 +127,15 @@
   <p class="intro">
     +450 palabras. Haz clic en un icono para ir directamente a una categoría.
   </p>
-
+<!-- Selector de velocidad -->
+<div style="margin: 10px 0; padding: 10px; background-color: #1b1b1b; border-radius: 6px; text-align: center; font-size: 0.95em;">
+  <label for="speed-select">Velocidad del audio: </label>
+  <select id="speed-select">
+    <option value="0.6">Lento</option>
+    <option value="0.85" selected>Normal</option>
+    <option value="1.1">Rápido</option>
+  </select>
+</div>
   <!-- Barra de navegación con iconos -->
   <div class="nav">
     <a href="#alfabeto"><span class="icon">🔤</span><span class="label">Alfabeto</span></a>
@@ -696,18 +704,59 @@
     Haz clic en 🔊 para escuchar. ¡Aprende a tu ritmo!
   </div>
 
-  <script>
-  async function playAudio(text) {
-    const utterance = new SpeechSynthesisUtterance();
-    utterance.text = text;
-    utterance.lang = 'de-DE'; // Alemán
-    utterance.rate = 0.9; // Velocidad normal
-    utterance.pitch = 1;  // Tono natural
+<script>
+  // Variables para control de voz
+  let germanVoice = null;
+  let selectedSpeed = 0.85; // Valor por defecto: normal
 
-    // Cancela cualquier audio en curso
+  // Cargar la velocidad guardada
+  function loadSavedSpeed() {
+    const saved = localStorage.getItem('audioSpeed');
+    if (saved) {
+      selectedSpeed = parseFloat(saved);
+      document.getElementById('speed-select').value = selectedSpeed;
+    }
+  }
+
+  // Guardar la velocidad seleccionada
+  function saveSpeed() {
+    selectedSpeed = parseFloat(this.value);
+    localStorage.setItem('audioSpeed', selectedSpeed);
+  }
+
+  // Cargar voces del sistema
+  function loadVoices() {
+    const voices = speechSynthesis.getVoices();
+    germanVoice = voices.find(voice => voice.lang.startsWith('de-DE')) || null;
+    if (!germanVoice) {
+      console.warn("No se encontró una voz en alemán. Usando voz predeterminada.");
+    }
+  }
+
+  // Inicialización
+  loadVoices();
+  if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = loadVoices;
+  }
+
+  // Cargar velocidad guardada al iniciar
+  loadSavedSpeed();
+
+  // Escuchar cambios en el selector
+  document.getElementById('speed-select').addEventListener('change', saveSpeed);
+
+  // Función principal de audio
+  function playAudio(text) {
     window.speechSynthesis.cancel();
-    
-    // Reproduce
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.voice = germanVoice;
+    utterance.lang = 'de-DE';
+    utterance.rate = selectedSpeed;   // Usa la velocidad elegida
+    utterance.pitch = 1.0;
+    utterance.volume = 1.0;
+
+    console.log(`Reproduciendo: "${text}" a velocidad ${selectedSpeed}`);
     window.speechSynthesis.speak(utterance);
   }
 </script>
