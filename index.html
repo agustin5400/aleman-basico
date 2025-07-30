@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alemán Básico - Navegación Visual</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      padding: 15px;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    h1 {
+      text-align: center;
+      color: #bbdefb;
+      border-bottom: 3px solid #007acc;
+      padding-bottom: 10px;
+      font-size: 1.7em;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #1b1b1b;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    .nav a {
+      text-decoration: none;
+      color: #64b5f6;
+      font-size: 0.95em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+    .nav a:hover {
+      background-color: #2d2d2d;
+      color: #f48fb1;
+    }
+    .nav span.icon {
+      font-size: 1.5em;
+      margin-bottom: 3px;
+    }
+    .nav span.label {
+      font-size: 0.8em;
+    }
+    h2 {
+      background-color: #007acc;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin-top: 30px;
+      font-size: 1.3em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h2 span.lang {
+      font-size: 0.9em;
+      color: #e3f2fd;
+      font-weight: normal;
+      opacity: 0.9;
+    }
+    p.intro {
+      text-align: center;
+      font-size: 1.05em;
+      color: #9fa8da;
+      max-width: 700px;
+      margin: 0 auto 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      margin-bottom: 25px;
+    }
+    th, td {
+      padding: 9px 11px;
+      border: 1px solid #333;
+      text-align: left;
+    }
+    th {
+      background-color: #0056b3;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #1e1e1e;
+    }
+    tr:hover {
+      background-color: #2d2d2d;
+    }
+    .speaker {
+      font-size: 1.3em;
+      cursor: pointer;
+      color: #64b5f6;
+      text-align: center;
+      display: inline-block;
+      width: 28px;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .speaker:hover {
+      transform: scale(1.35);
+      color: #f48fb1;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #78909c;
+      font-size: 0.9em;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🇩🇪 Alemán Básico - Navegación Visual</h1>
+  <p class="intro">
+    +450 palabras. Haz clic en un icono para ir directamente a una categoría.
+  </p>
+
+  <!-- Barra de navegación con iconos -->
+  <div class="nav">
+    <a href="#alfabeto"><span class="icon">🔤</span><span class="label">Alfabeto</span></a>
+    <a href="#colores"><span class="icon">🎨</span><span class="label">Colores</span></a>
+    <a href="#numeros"><span class="icon">🔢</span><span class="label">Números</span></a>
+    <a href="#profesiones"><span class="icon">💼</span><span class="label">Profesiones</span></a>
+    <a href="#ropa"><span class="icon">👕</span><span class="label">Ropa</span></a>
+    <a href="#tiempo-horas"><span class="icon">⏰</span><span class="label">Horas</span></a>
+    <a href="#comida"><span class="icon">🍎</span><span class="label">Comida</span></a>
+    <a href="#gramatica"><span class="icon">📚</span><span class="label">Frases</span></a>
+    <a href="#hogar"><span class="icon">🏠</span><span class="label">Hogar</span></a>
+    <a href="#naturaleza"><span class="icon">🌿</span><span class="label">Naturaleza</span></a>
+    <a href="#personas"><span class="icon">👥</span><span class="label">Familia</span></a>
+    <a href="#pronombres"><span class="icon">👤</span><span class="label">Pronombres</span></a>
+    <a href="#saludos"><span class="icon">👋</span><span class="label">Saludos</span></a>
+    <a href="#clima"><span class="icon">🌤️</span><span class="label">Clima</span></a>
+    <a href="#transporte"><span class="icon">🚌</span><span class="label">Transporte</span></a>
+  </div>
+
+  <!-- Categoría: Alfabeto -->
+  <h2 id="alfabeto"><span class="icon">🔤</span> Alfabeto <span class="lang">(Das Alphabet)</span></h2>
+  <table>
+    <tr><th>Alemán</th><th>Español</th><th>🔊</th></tr>
+    <tr><td>A</td><td>a</td><td><span class="speaker" onclick="playAudio('A')">🔊</span></td></tr>
+    <tr><td>B</td><td>be</td><td><span class="speaker" onclick="playAudio('B')">🔊</span></td></tr>
+    <tr><td>C</td><td>ce</td><td><span class="speaker" onclick="playAudio('C')">🔊</span></td></tr>
+    <tr><td>D</td><td>de</td><td><span class="speaker" onclick="playAudio('D')">🔊</span></td></tr>
+    <tr><td>E</td><td>e</td><td><span class="speaker" onclick="playAudio('E')">🔊</span></td></tr>
+    <tr><td>F</td><td>ef</td><td><span class="speaker" onclick="playAudio('F')">🔊</span></td></tr>
+    <tr><td>G</td><td>ge</td><td><span class="speaker" onclick="playAudio('G')">🔊</span></td></tr>
+    <tr><td>H</td><td>ha</td><td><span class="speaker" onclick="playAudio('H')">🔊</span></td></tr>
+    <tr><td>I</td><td>i</td><td><span class="speaker" onclick="playAudio('I')">🔊</span></td></tr>
+    <tr><td>J</td><td>jot</td><td><span class="speaker" onclick="playAudio('J')">🔊</span></td></tr>
+    <tr><td>K</td><td>ka</td><td><span class="speaker" onclick="playAudio('K')">🔊</span></td></tr>
+    <tr><td>L</td><td>el</td><td><span class="speaker" onclick="playAudio('L')">🔊</span></td></tr>
+    <tr><td>M</td><td>em</td><td><span class="speaker" onclick="playAudio('M')">🔊</span></td></tr>
+    <tr><td>N</td><td>en</td><td><span class="speaker" onclick="playAudio('N')">🔊</span></td></tr>
+    <tr><td>O</td><td>o</td><td><span class="speaker" onclick="playAudio('O')">🔊</span></td></tr>
+    <tr><td>P</td><td>pe</td><td><span class="speaker" onclick="playAudio('P')">🔊</span></td></tr>
+    <tr><td>Q</td><td>ku</td><td><span class="speaker" onclick="playAudio('Q')">🔊</span></td></tr>
+    <tr><td>R</td><td>er</td><td><span class="speaker" onclick="playAudio('R')">🔊</span></td></tr>
+    <tr><td>S</td><td>es</td><td><span class="speaker" onclick="playAudio('S')">🔊</span></td></tr>
+    <tr><td>T</td><td>te</td><td><span class="speaker" onclick="playAudio('T')">🔊</span></td></tr>
+    <tr><td>U</td><td>u</td><td><span class="speaker" onclick="playAudio('U')">🔊</span></td></tr>
+    <tr><td>V</td><td>fau</td><td><span class="speaker" onclick="playAudio('V')">🔊</span></td></tr>
+    <tr><td>W</td><td>ve</td><td><span class="speaker" onclick="playAudio('W')">🔊</span></td></tr>
+    <tr><td>X</td><td>iks</td><td><span class="speaker" onclick="playAudio('X')">🔊</span></td></tr>
+    <tr><td>Y</td><td>üpsilon</td><td><span class="speaker" onclick="playAudio('Y')">🔊</span></td></tr>
+    <tr><td>Z</td><td>tsed</td><td><span class="speaker" onclick="playAudio('Z')">🔊</span></td></tr>
+    <tr><td>Ä</td><td>ä</td><td><span class="speaker" onclick="playAudio('Ä')">🔊</span></td></tr>
+    <tr><td>Ö</td><td>ö</td><td><span class="speaker" onclick="playAudio('Ö')">🔊</span></td></tr>
+    <tr><td>Ü</td><td>ü</td><td><span class="speaker" onclick="playAudio('Ü')">🔊</span></td></tr>
+    <tr><td>ß</td><td>eszett</td><td><span class="speaker" onclick="playAudio('Eszett')">🔊</span></td></tr>
+  </table>
+
+  <!-- Categoría: Colores -->
+  <h2 id="colores"><span class="icon">🎨</span> Colores <span class="lang">(Die Farben)</span></h2>
+  <table>
+    <tr><th>Alemán</th><th>Español</th><th>🔊</th></tr>
+    <tr><td>rot</td><td>rojo</td><td><span class="speaker" onclick="playAudio('rot')">🔊</span></td></tr>
+    <tr><td>blau</td><td>azul</td><td><span class="speaker" onclick="playAudio('blau')">🔊</span></td></tr>
+    <tr><td>grün</td><td>verde</td><td><span class="speaker" onclick="playAudio('grün')">🔊</span></td></tr>
+    <tr><td>gelb</td><td>amarillo</td><td><span class="speaker" onclick="playAudio('gelb')">🔊</span></td></tr>
+    <tr><td>orange</td><td>naranja</td><td><span class="speaker" onclick="playAudio('orange')">🔊</span></td></tr>
+    <tr><td>lila</td><td>morado</td><td><span class="speaker" onclick="playAudio('lila')">🔊</span></td></tr>
+    <tr><td>rosa</td><td>rosa</td><td><span class="speaker" onclick="playAudio('rosa')">🔊</span></td></tr>
+    <tr><td>braun</td><td>marrón</td><td><span class="speaker" onclick="playAudio('braun')">🔊</span></td></tr>
+    <tr><td>grau</td><td>gris</td><td><span class="speaker" onclick="playAudio('grau')">🔊</span></td></tr>
+    <tr><td>schwarz</td><td>negro</td><td><span class="speaker" onclick="playAudio('schwarz')">🔊</span></td></tr>
+    <tr><td>weiß</td><td>blanco</td><td><span class="speaker" onclick="playAudio('weiß')">🔊</span></td></tr>
+    <tr><td>silber</td><td>plata</td><td><span class="speaker" onclick="playAudio('silber')">🔊</span></td></tr>
+    <tr><td>gold</td><td>oro</td><td><span class="speaker" onclick="playAudio('gold')">🔊</span></td></tr>
+    <tr><td>dunkelblau</td><td>azul oscuro</td><td><span class="speaker" onclick="playAudio('dunkelblau')">🔊</span></td></tr>
+    <tr><td>hellgrün</td><td>verde claro</td><td><span class="speaker" onclick="playAudio('hellgrün')">🔊</span></td></tr>
+    <tr><td>beige</td><td>beige</td><td><span class="speaker" onclick="playAudio('beige')">🔊</span></td></tr>
+    <tr><td>türkis</td><td>turquesa</td><td><span class="speaker" onclick="playAudio('türkis')">🔊</span></td></tr>
+    <tr><td>pink</td><td>rosado</td><td><span class="speaker" onclick="playAudio('pink')">🔊</span></td></tr>
+    <tr><td>ocker</td><td>ocre</td><td><span class="speaker" onclick="playAudio('ocker')">🔊</span></td></tr>
+    <tr><td>mint</td><td>menta</td><td><span class="speaker" onclick="playAudio('mint')">🔊</span></td></tr>
+    <tr><td>rotviolett</td><td>rojo vino</td><td><span class="speaker" onclick="playAudio('rotviolett')">🔊</span></td></tr>
+    <tr><td>anthrazit</td><td>gris carbón</td><td><span class="speaker" onclick="playAudio('anthrazit')">🔊</span></td></tr>
+    <tr><td>creme</td><td>crema</td><td><span class="speaker" onclick="playAudio('creme')">🔊</span></td></tr>
+    <tr><td>oliv</td><td>oliva</td><td><span class="speaker" onclick="playAudio('oliv')">🔊</span></td></tr>
+    <tr><td>indigo</td><td>índigo</td><td><span class="speaker" onclick="playAudio('indigo')">🔊</span></td></tr>
+    <tr><td>koralle</td><td>coral</td><td><span class="speaker" onclick="playAudio('koralle')">🔊</span></td></tr>
+    <tr><td>khaki</td><td>caqui</td><td><span class="speaker" onclick="playAudio('khaki')">🔊</span></td></tr>
+    <tr><td>elfenbein</td><td>marfil</td><td><span class="speaker" onclick="playAudio('elfenbein')">🔊</span></td></tr>
+    <tr><td>lack</td><td>lacado</td><td><span class="speaker" onclick="playAudio('lack')">🔊</span></td></tr>
+  </table>
+
+  <!-- Categoría: Números -->
+  <h2 id="numeros"><span class="icon">🔢</span> Números <span class="lang">(Die Zahlen)</span></h2>
+  <table>
+    <tr><th>Alemán</th><th>Español</th><th>🔊</th></tr>
+    <tr><td>Null</td><td>0</td><td><span class="speaker" onclick="playAudio('Null')">🔊</span></td></tr>
+    <tr><td>eins</td><td>1</td><td><span class="speaker" onclick="playAudio('eins')">🔊</span></td></tr>
+    <tr><td>zwei</td><td>2</td><td><span class="speaker" onclick="playAudio('zwei')">🔊</span></td></tr>
+    <tr><td>drei</td><td>3</td><td><span class="speaker" onclick="playAudio('drei')">🔊</span></td></tr>
+    <tr><td>vier</td><td>4</td><td><span class="speaker" onclick="playAudio('vier')">🔊</span></td></tr>
+    <tr><td>fünf</td><td>5</td><td><span class="speaker" onclick="playAudio('fünf')">🔊</span></td></tr>
+    <tr><td>sechs</td><td>6</td><td><span class="speaker" onclick="playAudio('sechs')">🔊</span></td></tr>
+    <tr><td>sieben</td><td>7</td><td><span class="speaker" onclick="playAudio('sieben')">🔊</span></td></tr>
+    <tr><td>acht</td><td>8</td><td><span class="speaker" onclick="playAudio('acht')">🔊</span></td></tr>
+    <tr><td>neun</td><td>9</td><td><span class="speaker" onclick="playAudio('neun')">🔊</span></td></tr>
+    <tr><td>zehn</td><td>10</td><td><span class="speaker" onclick="playAudio('zehn')">🔊</span></td></tr>
+    <tr><td>elf</td><td>11</td><td><span class="speaker" onclick="playAudio('elf')">🔊</span></td></tr>
+    <tr><td>zwölf</td><td>12</td><td><span class="speaker" onclick="playAudio('zwölf')">🔊</span></td></tr>
+    <tr><td>dreizehn</td><td>13</td><td><span class="speaker" onclick="playAudio('dreizehn')">🔊</span></td></tr>
+    <tr><td>zwanzig</td><td>20</td><td><span class="speaker" onclick="playAudio('zwanzig')">🔊</span></td></tr>
+    <tr><td>dreißig</td><td>30</td><td><span class="speaker" onclick="playAudio('dreißig')">🔊</span></td></tr>
+    <tr><td>vierzig</td><td>40</td><td><span class="speaker" onclick="playAudio('vierzig')">🔊</span></td></tr>
+    <tr><td>fünfzig</td><td>50</td><td><span class="speaker" onclick="playAudio('fünfzig')">🔊</span></td></tr>
+    <tr><td>sechzig</td><td>60</td><td><span class="speaker" onclick="playAudio('sechzig')">🔊</span></td></tr>
+    <tr><td>siebzig</td><td>70</td><td><span class="speaker" onclick="playAudio('siebzig')">🔊</span></td></tr>
+    <tr><td>achtzig</td><td>80</td><td><span class="speaker" onclick="playAudio('achtzig')">🔊</span></td></tr>
+    <tr><td>neunzig</td><td>90</td><td><span class="speaker" onclick="playAudio('neunzig')">🔊</span></td></tr>
+    <tr><td>hundert</td><td>100</td><td><span class="speaker" onclick="playAudio('hundert')">🔊</span></td></tr>
+    <tr><td>tausend</td><td>1.000</td><td><span class="speaker" onclick="playAudio('tausend')">🔊</span></td></tr>
+    <tr><td>erste</td><td>primero</td><td><span class="speaker" onclick="playAudio('erste')">🔊</span></td></tr>
+    <tr><td>zweite</td><td>segundo</td><td><span class="speaker" onclick="playAudio('zweite')">🔊</span></td></tr>
+    <tr><td>dritte</td><td>tercero</td><td><span class="speaker" onclick="playAudio('dritte')">🔊</span></td></tr>
+    <tr><td>vierte</td><td>cuarto</td><td><span class="speaker" onclick="playAudio('vierte')">🔊</span></td></tr>
+    <tr><td>fünfte</td><td>quinto</td><td><span class="speaker" onclick="playAudio('fünfte')">🔊</span></td></tr>
+    <tr><td>zehnte</td><td>décimo</td><td><span class="speaker" onclick="playAudio('zehnte')">🔊</span></td></tr>
+  </table>
+
+  <!-- (Continúa el resto del código con Profesiones, Ropa, etc.) -->
+
+  <!-- Como el mensaje es muy largo, si quieres, te doy el resto en partes -->
+
+  <div class="footer">
+    🌙 <strong>Modo oscuro activado. Navega con los iconos arriba.</strong><br>
+    Haz clic en 🔊 para escuchar. ¡Aprende a tu ritmo!
+  </div>
+
+  <script>
+    function playAudio(text) {
+      const cleanText = encodeURIComponent(text.trim());
+      const audio = new Audio(`https://translate.google.com/translate_tts?ie=UTF-8&tl=de&q=${cleanText}&client=tw-ob`);
+      audio.play().catch(e => {
+        console.warn("Error de audio:", e.message);
+      });
+    }
+  </script>
+
+</body>
+</html>
